@@ -1,7 +1,7 @@
 import './App.css';
 import Demo1 from './components/Demo1'
 import Product from './components/Product'
-
+import Count from './components/Count'
 
 function App() {
   let json1 = [
@@ -24,10 +24,15 @@ function App() {
     console.log(`a`);
   }
   
+  let count = 0;
   return (
     <div className="App">
         <Demo1 firstDataProps='Hello props' firstEvent={ () => firstEvent() } />
+        <hr></hr>
         {renderJson1}
+        <hr></hr>
+        <Count count={count}/>
+
     </div>
   );
 }

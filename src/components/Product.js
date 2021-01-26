@@ -5,12 +5,12 @@ import  '../App.css'
 
 const Product = ( {name, age} ) => {
     const isActive = (number) => {
-        console.log(`---${number}---`);
+        console.log(`---${number}---`)
         return number === 3;
     }
     const test = (text = '?') => {
-        return `huhu ${name} haha: ${text}`;
-    };
+        return `huhu ${name} haha: ${text}`
+    }
 
     return (
         <div>
@@ -22,9 +22,9 @@ const Product = ( {name, age} ) => {
     )
 }
 
-Product.prototype = {
+Product.propTypes = {
     name: PropTypes.string,
     age: PropTypes.number
 }
 
-export default Product
+export default Product 

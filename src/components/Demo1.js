@@ -13,7 +13,7 @@ const Demo1 = ( {firstEvent, firstDataProps} ) => {
     )
 }
 
-Demo1.prototype = {
+Demo1.propTypes = {
     firstEvent: PropTypes.func,
     firstDataProps: PropTypes.string
 }
