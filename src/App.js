@@ -1,4 +1,4 @@
-import './App.css';
+import './App.css'
 import Demo1 from './components/Demo1'
 import Product from './components/Product'
 import Count from './components/Count'

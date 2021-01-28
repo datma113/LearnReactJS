@@ -1,31 +1,41 @@
-import React, { useState } from 'react'
-
+import "./SttObj.css";
+import React, { useState } from "react";
+import classNames from "classnames";
 
 const SttObj = () => {
-    const arrObj = [
-        {name: 'obj 1', id: 1},
-        {name: 'obj 2', id: 2},  
-        {name: 'obj 3', id: 3},
-    ]
-    const [objState, setstate] = useState(arrObj);
+  const arrObj = [
+    { name: "Java", id: 1, isActive: false },
+    { name: "JavaScript", id: 2, isActive: false },
+    { name: "Python", id: 3, isActive: true },
+  ];
 
-    
-    const change = () => {
-        return () => {
-           
-        }
-       
+  const [arrObjState, setArrObjState] = useState(arrObj);
 
-    }
+  const removeIt = (x,index) => {
+    return () => {
+      const currentStatus = arrObjState[index].isActive;
+    console.log(x);
 
+      setArrObjState([
+        ...arrObjState.slice(0, index),
+        { ...arrObjState[index], isActive: !currentStatus },
+        ...arrObjState.slice(index + 1),
+      ]);
+    };
+  };
+
+  const renderA = arrObjState.map((x, index) => {
     return (
-        <div>
-           <button onClick={change()}>change obj</button>
-           <div>
-               <p></p>
-           </div>
-        </div>
-    )
-}
+      <p
+        className={classNames({ isActive: x.isActive }, "curs")}
+        onClick={removeIt(x,index)}
+        key={index}
+      >
+        {x.id}: {x.name}
+      </p>
+    );
+  });
+  return <div>{renderA}</div>;
+};
 
-export default SttObj
+export default SttObj;

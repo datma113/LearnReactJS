@@ -9,8 +9,6 @@ const Count = ( {count} ) => {
     
     const increase = (num) => {
         return () => {
-            console.log(state);
-            console.log(`ss:${num}`)
             setstate(state + 3);
         };
         
