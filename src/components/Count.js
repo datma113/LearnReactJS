@@ -6,15 +6,19 @@ import PropTypes from 'prop-types'
 
 const Count = ( {count} ) => {
     const [state, setstate] = useState(count);
-
-    const increase = () => {
-        console.log(state);
-        setstate(state + 1);
+    
+    const increase = (num) => {
+        return () => {
+            console.log(state);
+            console.log(`ss:${num}`)
+            setstate(state + 3);
+        };
+        
     }
 
     return (
         <div>
-            <button onClick={ () => increase()}>incease</button>
+            <button onClick={increase(2)}>incease</button>
             <p>{state}</p>
         </div>
     )

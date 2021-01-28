@@ -2,6 +2,7 @@ import './App.css';
 import Demo1 from './components/Demo1'
 import Product from './components/Product'
 import Count from './components/Count'
+import SttObj from './components/SttObj'
 
 function App() {
   let json1 = [
@@ -32,7 +33,8 @@ function App() {
         {renderJson1}
         <hr></hr>
         <Count count={count}/>
-
+        <hr></hr>
+        <SttObj/>
     </div>
   );
 }
