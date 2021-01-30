@@ -1,8 +1,14 @@
+import { Button } from 'reactstrap';
+
 import './App.css'
+
 import Demo1 from './components/Demo1'
 import Product from './components/Product'
 import Count from './components/Count'
 import SttObj from './components/SttObj'
+import Shop from './components/Shop'
+
+
 
 function App() {
   let json1 = [
@@ -35,6 +41,11 @@ function App() {
         <Count count={count}/>
         <hr></hr>
         <SttObj/>
+        <hr></hr>
+        <hr></hr>
+        <Button color="danger">click</Button>
+        <hr/>
+        <Shop/>
     </div>
   );
 }
